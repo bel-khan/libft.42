@@ -9,6 +9,7 @@
 /*   Updated: 2025/11/12 22:56:00 by bel-khan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 #include <stdlib.h>
 
@@ -92,10 +93,7 @@ char	**ft_split(char const *s, char c)
 			s++;
 		result[i] = get_word(s, c);
 		if (!result[i])
-		{
-			free_split(result, i - 1);
-			return (NULL);
-		}
+			return (free_split(result, i - 1));
 		s += word_len(s, c);
 		i++;
 	}
